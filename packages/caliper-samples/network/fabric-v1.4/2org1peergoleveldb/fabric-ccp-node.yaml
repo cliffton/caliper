@@ -72,11 +72,11 @@ channels:
         eventSource: true
 
     chaincodes:
-    - id: marbles
-      version: v0
-      language: node
-      path: src/contract/fabric/marbles/node
-      metadataPath: src/contract/fabric/marbles/node/metadata
+    # - id: marbles
+    #   version: v0
+    #   language: node
+    #   path: src/contract/fabric/marbles/node
+    #   metadataPath: src/contract/fabric/marbles/node/metadata
     - id: simple
       version: v0
       language: node
@@ -107,19 +107,19 @@ organizations:
 
 orderers:
   orderer.example.com:
-    url: grpc://localhost:7050
+    url: grpc://10.10.10.170:7050
     grpcOptions:
       ssl-target-name-override: orderer.example.com
 
 peers:
   peer0.org1.example.com:
-    url: grpc://localhost:7051
+    url: grpc://10.10.10.171:7051
     grpcOptions:
       ssl-target-name-override: peer0.org1.example.com
       grpc.keepalive_time_ms: 600000
 
   peer0.org2.example.com:
-    url: grpc://localhost:8051
+    url: grpc://10.10.10.172:8051
     grpcOptions:
       ssl-target-name-override: peer0.org2.example.com
       grpc.keepalive_time_ms: 600000
