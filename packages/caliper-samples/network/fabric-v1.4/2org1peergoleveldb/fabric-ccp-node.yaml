@@ -134,7 +134,7 @@ certificateAuthorities:
       enrollSecret: adminpw
 
   ca.org2.example.com:
-    url: http://10.10.10.170:8054
+    url: http://10.10.10.175:7054
     httpOptions:
       verify: false
     registrar:
