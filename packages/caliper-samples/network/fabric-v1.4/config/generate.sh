@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # if the binaries are not available, download them
-if [[ ! -d "bin" ]]; then
-  curl -sSL http://bit.ly/2ysbOFE | bash -s -- 1.4.0 1.4.0 0.4.14 -ds
-fi
+# if [[ ! -d "bin" ]]; then
+#   curl -sSL http://bit.ly/2ysbOFE | bash -s -- 1.4.0 1.4.0 0.4.14 -ds
+# fi
 
 rm -rf ./crypto-config/
 rm -f ./orgs.genesis.block
