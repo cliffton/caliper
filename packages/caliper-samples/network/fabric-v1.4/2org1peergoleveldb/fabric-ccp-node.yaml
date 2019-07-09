@@ -107,26 +107,26 @@ organizations:
 
 orderers:
   orderer.example.com:
-    url: grpc://10.10.10.170:7050
+    url: grpc://10.10.10.171:7050
     grpcOptions:
       ssl-target-name-override: orderer.example.com
 
 peers:
   peer0.org1.example.com:
-    url: grpc://10.10.10.171:7051
+    url: grpc://10.10.10.172:7051
     grpcOptions:
       ssl-target-name-override: peer0.org1.example.com
       grpc.keepalive_time_ms: 600000
 
   peer0.org2.example.com:
-    url: grpc://10.10.10.172:8051
+    url: grpc://10.10.10.173:8051
     grpcOptions:
       ssl-target-name-override: peer0.org2.example.com
       grpc.keepalive_time_ms: 600000
 
 certificateAuthorities:
   ca.org1.example.com:
-    url: http://localhost:7054
+    url: http://10.10.10.170:7054
     httpOptions:
       verify: false
     registrar:
@@ -134,7 +134,7 @@ certificateAuthorities:
       enrollSecret: adminpw
 
   ca.org2.example.com:
-    url: http://localhost:8054
+    url: http://10.10.10.170:8054
     httpOptions:
       verify: false
     registrar:
