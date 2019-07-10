@@ -71,7 +71,7 @@ elif [ "${BENCHMARK}" == "fabric-ccp" ]; then
         exit $rc;
     else
         # Run with channel creation using a tx file in LevelDB
-        caliper benchmark run -c benchmark/simple/config.yaml -n network/fabric-v1.4/2org1peergoleveldb/fabric-ccp-go.yaml -w ../caliper-samples/
+        # caliper benchmark run -c benchmark/simple/config.yaml -n network/fabric-v1.4/2org1peergoleveldb/fabric-ccp-go.yaml -w ../caliper-samples/
         rc=$?
         cleanup
         exit $rc;
