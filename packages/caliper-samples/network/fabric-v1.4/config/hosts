@@ -11,8 +11,8 @@ ff02::2 ip6-allrouters
 10.10.10.173       peer0.org2.example.com
 10.10.10.174       client.example.com
 10.10.10.176       zookeeper1.example.com
-10.10.10.176       kafka1.example.com
+10.10.10.176       kafka1
 10.10.10.177       zookeeper2.example.com
-10.10.10.177       kafka2.example.com
+10.10.10.177       kafka2
 10.10.10.175       zookeeper3.example.com
-10.10.10.175       kafka3.example.com
+10.10.10.175       kafka3
