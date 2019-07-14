@@ -17,3 +17,5 @@ ff02::2 ip6-allrouters
 10.10.10.175       zookeeper3.example.com
 10.10.10.175       kafka3
 10.10.10.174       kafka0
+10.10.10.171       orderer0.example.com
+10.10.10.170       orderer1.example.com
