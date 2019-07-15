@@ -1,8 +1,9 @@
 #!/bin/bash
 
+set -x
+
 export CALIPER_KAFKA=$HOME/caliper/packages/caliper-samples/network/fabric-v1.4/kafka/
 
-set -x
 
 function usage {
     echo "./launch_orderer.sh ORG_ID"

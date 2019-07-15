@@ -41,7 +41,7 @@ export CORE_PEER_GOSSIP_USELEADERELECTION=true
 export CORE_PEER_GOSSIP_ORGLEADER=false
 export CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer"$PEER_ID".org"$ORG_ID".example.com:7051
 
-cp -r ./config/crypto-config/peerOrganizations/org"$ORG_ID".example.com/peers/"$CORE_PEER_ID"/* $HOME/peer/msp/
+cp -r ./config/crypto-config/peerOrganizations/org"$ORG_ID".example.com/peers/"$CORE_PEER_ID"/* $HOME/peer/
 cp -r ./config/mychannel.tx $HOME/peer/configtx/mychannel.tx
 cp -r ./config/crypto-config/peerOrganizations/org"$ORG_ID".example.com/users $HOME/peer/msp/users
 
