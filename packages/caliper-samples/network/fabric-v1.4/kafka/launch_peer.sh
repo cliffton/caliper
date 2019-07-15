@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 function usage {
     echo "./launch_peer.sh ORG_ID PEER_ID"
 }

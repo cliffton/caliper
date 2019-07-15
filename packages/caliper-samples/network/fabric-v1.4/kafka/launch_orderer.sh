@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 function usage {
     echo "./launch_orderer.sh ORG_ID"
 }
