@@ -30,6 +30,6 @@ export FABRIC_CFG_PATH="$HOME"/orderer
 
 cp orderer.yaml $HOME/orderer/
 cp -r ./config/* $HOME/orderer/configtx/
-cp -r ./config/crypto-config/ordererOrganizations/example.com/orderers/orderer"ORG_ID".example.com/* $HOME/orderer/msp/orderer
+cp -r ./config/crypto-config/ordererOrganizations/example.com/orderers/orderer"ORG_ID".example.com/* $HOME/orderer/msp/
 cd $HOME/go/src/github.com/hyperledger/fabric/
 orderer
