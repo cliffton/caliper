@@ -21,7 +21,7 @@ fi
 
 
 rm -rf $HOME/orderer/*
-mkdir -p $HOME/orderer/msp
+mkdir -p $HOME/orderer/msp/orderer
 mkdir -p $HOME/orderer/ledger
 mkdir -p $HOME/orderer/configtx
 
@@ -41,4 +41,7 @@ cp orderer.yaml "$HOME"/orderer/
 cp -r ./config/* "$HOME"/orderer/configtx/
 cp -r ./config/crypto-config/ordererOrganizations/example.com/orderers/orderer"$ORG_ID".example.com/* "$HOME"/orderer/msp/orderer/
 cd $HOME/go/src/github.com/hyperledger/fabric/
+
+set +x 
+
 orderer
