@@ -28,7 +28,7 @@ else
     PEER_ID=$2
 fi
 
-
+export FABRIC_CFG_PATH=$HOME/peer/
 export FABRIC_LOGGING_SPEC="grpc=debug:debug"
 export CORE_CHAINCODE_LOGGING_LEVEL="INFO"
 export CORE_CHAINCODE_LOGGING_SHIM=INFO
