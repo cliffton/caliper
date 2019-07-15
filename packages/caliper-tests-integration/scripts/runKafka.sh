@@ -56,7 +56,7 @@ export npm_config_registry=http://localhost:4873
 npm run setup_verdaccio
 
 
-export CALIPER_FABRICCCP_SKIPCREATECHANNEL_MYCHANNEL=true
+# export CALIPER_FABRICCCP_SKIPCREATECHANNEL_MYCHANNEL=true
 
 # Run benchmark adaptor
 if [ "${BENCHMARK}" == "composer" ]; then
