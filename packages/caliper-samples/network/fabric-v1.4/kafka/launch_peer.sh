@@ -28,6 +28,12 @@ else
     PEER_ID=$2
 fi
 
+rm -rf $HOME/peer/*
+mkdir -p $HOME/peer/ledger
+mkdir -p $HOME/peer/configtx
+mkdir -p $HOME/peer/msp
+
+
 export FABRIC_CFG_PATH=$HOME/peer/
 export FABRIC_LOGGING_SPEC="grpc=debug:debug"
 export CORE_CHAINCODE_LOGGING_LEVEL="INFO"
@@ -40,11 +46,13 @@ export CORE_PEER_ADDRESS=peer"$PEER_ID".org"$ORG_ID".example.com:7051
 export CORE_PEER_GOSSIP_USELEADERELECTION=true
 export CORE_PEER_GOSSIP_ORGLEADER=false
 export CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer"$PEER_ID".org"$ORG_ID".example.com:7051
-export CORE_PEER_FILESYSTEMPATH=$HOME/peer/
+export CORE_PEER_FILESYSTEMPATH=$HOME/peer/ledger/
 
+
+cp core.yaml $HOME/peer/
 cp -r ./config/crypto-config/peerOrganizations/org"$ORG_ID".example.com/peers/"$CORE_PEER_ID"/* $HOME/peer/
 cp -r ./config/mychannel.tx $HOME/peer/configtx/mychannel.tx
-cp -r ./config/crypto-config/peerOrganizations/org"$ORG_ID".example.com/users $HOME/peer/msp/users
+cp -r ./config/crypto-config/peerOrganizations/org"$ORG_ID".example.com/users $HOME/peer/msp/
 
 cd $HOME/go/src/github.com/hyperledger/fabric
 peer node start

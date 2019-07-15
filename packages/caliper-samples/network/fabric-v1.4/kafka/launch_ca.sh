@@ -19,6 +19,9 @@ else
 fi
 
 
+rm -rf $HOME/fabric-ca-server/*
+mkdir -p $HOME/fabric-ca-server/fabric-ca-server-config
+mkdir -p $HOME/fabric-ca-server/msp
 
 
 export CA_NAME=ca.org"$ORG_ID".example.com

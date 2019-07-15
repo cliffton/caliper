@@ -19,6 +19,12 @@ else
     ORG_ID=$1
 fi
 
+
+rm -rf $HOME/orderer/*
+mkdir -p $HOME/orderer/msp
+mkdir -p $HOME/orderer/ledger
+mkdir -p $HOME/orderer/configtx
+
 export FABRIC_LOGGING_SPEC="grpc=debug:debug"
 export ORDERER_GENERAL_LISTENADDRESS="0.0.0.0"
 export ORDERER_GENERAL_GENESISMETHOD="file"
