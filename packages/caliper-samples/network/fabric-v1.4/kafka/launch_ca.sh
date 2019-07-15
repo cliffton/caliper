@@ -6,7 +6,7 @@ set -x
 
 function usage {
     echo "./launch_ca.sh ORG_ID"
-
+}
 
 # Check if ORG_NAME passed
 if [ -z $1 ];
