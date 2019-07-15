@@ -55,6 +55,9 @@ export npm_config_registry=http://localhost:4873
 # Start npm server and publish latest packages to it
 npm run setup_verdaccio
 
+
+export CALIPER_FABRICCCP_SKIPCREATECHANNEL_MYCHANNEL=true
+
 # Run benchmark adaptor
 if [ "${BENCHMARK}" == "composer" ]; then
     caliper benchmark run -c benchmark/composer/config.yaml -n network/fabric-v1.3/2org1peercouchdb/composer.json -w ../caliper-samples/
