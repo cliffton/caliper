@@ -1,10 +1,12 @@
 #!/bin/bash
 
+export CALIPER_KAFKA=$HOME/caliper/packages/caliper-samples/network/fabric-v1.4/kafka/
+
 set -x
 
 function usage {
     echo "./launch_ca.sh ORG_ID"
-}
+
 
 # Check if ORG_NAME passed
 if [ -z $1 ];
