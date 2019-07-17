@@ -2,7 +2,7 @@
 
 export CALIPER_FABRIC=$HOME/caliper/packages/caliper-samples/network/fabric-v1.4/
 
-set -x
+# set -x
 
 function usage {
     echo "./launch_ca.sh ORG_ID"
@@ -43,6 +43,6 @@ cd $HOME/caliper/packages/caliper-samples/network/fabric-v1.4/"$CONFIG_TYPE"
 cp ./config/crypto-config/peerOrganizations/org"$ORG_ID".example.com/ca/* "$HOME"/fabric-ca-server/fabric-ca-server-config/
 cd $HOME/fabric-ca-server/
 
-set +x
+# set +x
 
 fabric-ca-server start -b admin:adminpw -d &> fabric-ca-server.log
