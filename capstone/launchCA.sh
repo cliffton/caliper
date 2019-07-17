@@ -33,7 +33,8 @@ fi
 pids=`ps ax | grep -i 'fabric-ca-server' | grep -v grep | awk '{print $1}'`
 for pid in $(eval echo $pids)
 do
-	echo "########### $pid #############"
+	echo "########### kill -9 $pid #############"
+	kill -9 $pid
 done
 
 
