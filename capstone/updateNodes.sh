@@ -21,7 +21,7 @@ else
 fi
 
 
-if [ -z $3 ];
+if [ -z "$3" ];
 then
     echo  "Please specify cmd!!!"
     exit 0
