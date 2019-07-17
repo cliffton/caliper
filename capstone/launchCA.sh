@@ -47,4 +47,4 @@ cd $HOME/fabric-ca-server/
 
 # set +x
 
-fabric-ca-server start -b admin:adminpw -d &> fabric-ca-server.log
+# fabric-ca-server start -b admin:adminpw -d &> fabric-ca-server.log
