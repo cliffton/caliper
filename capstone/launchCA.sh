@@ -28,7 +28,7 @@ else
 fi
 
 
-# pkill -9 fabric-ca-server
+pkill -9 fabric-ca-server
 # pkill -9 tail
 rm -rf $HOME/fabric-ca-server/
 mkdir -p $HOME/fabric-ca-server/fabric-ca-server-config
