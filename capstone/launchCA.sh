@@ -5,7 +5,7 @@ export CALIPER_FABRIC=$HOME/caliper/packages/caliper-samples/network/fabric-v1.4
 # set -x
 
 function usage {
-    echo "./launch_ca.sh ORG_ID"
+    echo "./launchCA.sh ORG_ID kafka"
 }
 
 # Check if ORG_NAME passed
