@@ -54,5 +54,5 @@ cp ./config/crypto-config/peerOrganizations/org"$ORG_ID".example.com/ca/* "$HOME
 cd $HOME/fabric-ca-server/
 
 # set +x
-
+# fabric-ca-server start --ca.certfile /etc/hyperledger/fabric-ca-server-config/ca.org1.example.com-cert.pem --ca.keyfile /etc/hyperledger/fabric-ca-server-config/key.pem -b admin:adminpw -d
 fabric-ca-server start -b admin:adminpw -d &> fabric-ca-server.log &
