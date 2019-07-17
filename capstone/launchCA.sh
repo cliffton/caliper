@@ -30,7 +30,7 @@ fi
 
 # pkill -9 fabric-ca-server
 # pkill -9 tail
-pids=`ps ax | grep -i 'kafka.Kafka' | grep -v grep | awk '{print $1}'`
+pids=`ps ax | grep -i 'fabric-ca-server' | grep -v grep | awk '{print $1}'`
 for pid in $(eval echo $pids)
 do
 	echo "########### $pid #############"
