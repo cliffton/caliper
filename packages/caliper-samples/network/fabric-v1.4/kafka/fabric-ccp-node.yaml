@@ -19,8 +19,8 @@ caliper:
     command:
         # start: docker-compose -f network/fabric-v1.4/kafka/docker-compose.yaml up -d;sleep 3s
         # end: docker-compose -f network/fabric-v1.4/kafka/docker-compose.yaml down;(test -z \"$(docker ps -aq)\") || docker rm $(docker ps -aq);(test -z \"$(docker images dev* -q)\") || docker rmi $(docker images dev* -q);rm -rf /tmp/hfc-*
-        start: echo "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$> Starts Here <$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
-        end: echo "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$>  Ends Here  <$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
+        start: echo "Starts Here"
+        end: echo "Ends Here"
 
 info:
     Version: 1.4.0
