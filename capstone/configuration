@@ -1,7 +1,7 @@
 # Zookeeper
-166: zookeper0 (ID=0)
-167: zookeper1 (ID=1)
-168: zookeper2 (ID=2)
+166: zookeper0 (ID=1)
+167: zookeper1 (ID=2)
+168: zookeper2 (ID=3)
 
 # Kafka
 169: kafka0 (ID=0)
