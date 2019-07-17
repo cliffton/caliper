@@ -1,0 +1,21 @@
+# Zookeeper
+166: zookeper0 (ID=0)
+167: zookeper1 (ID=1)
+168: zookeper2 (ID=2)
+
+# Kafka
+169: kafka0 (ID=0)
+170: kafka1 (ID=1)
+171: kafka2 (ID=2)
+172: kafka3 (ID=3)
+
+# Orderer & CA
+173 Orderer0,  CA Org1
+174 Orderer1,  CA Org2
+
+# Peer
+175 Peer0 Org1
+176 Peer0 Org2
+
+# Client
+177 Client
