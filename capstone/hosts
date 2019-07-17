@@ -6,9 +6,9 @@ ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
 
 # Zookeeper
-10.10.10.166       zookeper0
-10.10.10.167       zookeper1
-10.10.10.168       zookeper2
+10.10.10.166       zookeeper0
+10.10.10.167       zookeeper1
+10.10.10.168       zookeeper2
 
 # Kafka
 10.10.10.169       kafka0
