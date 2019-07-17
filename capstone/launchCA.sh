@@ -28,8 +28,15 @@ else
 fi
 
 
-pkill -9 fabric-ca-server
+# pkill -9 fabric-ca-server
 # pkill -9 tail
+pids=`ps ax | grep -i 'kafka.Kafka' | grep -v grep | awk '{print $1}'`
+for pid in $(eval echo $pids)
+do
+	echo "########### $pid #############"
+done
+
+
 rm -rf $HOME/fabric-ca-server/
 mkdir -p $HOME/fabric-ca-server/fabric-ca-server-config
 mkdir -p $HOME/fabric-ca-server/msp
