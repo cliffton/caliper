@@ -15,7 +15,7 @@ fi
 
 export CALIPER_FABRICCCP_SKIPCREATECHANNEL_MYCHANNEL=true
 
-if [ $2 == "create" ];
+if [ "$2" == "create" ];
 then
     echo "Creating channel"
     export CALIPER_FABRICCCP_SKIPCREATECHANNEL_MYCHANNEL=false
@@ -37,6 +37,7 @@ fi
 # 	kill -9 $pid
 # done
 
+export BENCHMARK=fabric-ccp
 
 
 mkdir -p $HOME/reports 
