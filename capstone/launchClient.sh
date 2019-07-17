@@ -22,27 +22,27 @@ else
     export CALIPER_FABRICCCP_SKIPCREATECHANNEL_MYCHANNEL=false
 fi
 
-pids=`ps ax | grep -i 'http.server' | grep -v grep | awk '{print $1}'`
-for pid in $(eval echo $pids)
-do
-	echo "########### kill -9 $pid #############"
-	kill -9 $pid
-done
+# pids=`ps ax | grep -i 'http.server' | grep -v grep | awk '{print $1}'`
+# for pid in $(eval echo $pids)
+# do
+# 	echo "########### kill -9 $pid #############"
+# 	kill -9 $pid
+# done
 
-pids=`ps ax | grep -i 'cliffton.io' | grep -v grep | awk '{print $1}'`
-for pid in $(eval echo $pids)
-do
-	echo "########### kill -9 $pid #############"
-	kill -9 $pid
-done
+# pids=`ps ax | grep -i 'cliffton.io' | grep -v grep | awk '{print $1}'`
+# for pid in $(eval echo $pids)
+# do
+# 	echo "########### kill -9 $pid #############"
+# 	kill -9 $pid
+# done
 
 
 
-mkdir -p $HOME/caliper/reports 
+mkdir -p $HOME/reports 
 
-cd $HOME/caliper/packages/caliper-tests-integration/reports/
-python -m http.server 8888 &
-ssh -R 3333:localhost:8888 cliffton.io &
+# cd $HOME/caliper/packages/caliper-tests-integration/reports/
+# python -m http.server 8888 &> http-server.log &
+# ssh -R 3333:localhost:8888 cliffton.io &> ssh.log &
 
 
 CALIPER_ROOT=$HOME/caliper/packages/caliper-samples
