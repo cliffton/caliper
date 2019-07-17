@@ -96,7 +96,8 @@ module.exports.run = async function(absConfigFile, absNetworkFile, admin, client
         await monitor.stop();
 
         const date = new Date().toISOString().replace(/-/g,'').replace(/:/g,'').substr(0,15);
-        const outFile = path.join(process.cwd(), `~/reports/report-${date}.html`);
+        // const outFile = path.join(process.cwd(), `~/reports/report-${date}.html`);
+        const outFile = `~/reports/report-${date}.html`
         await report.finalize(outFile);
 
         clientOrchestrator.stop();
