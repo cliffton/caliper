@@ -57,7 +57,7 @@ clients:
 
 channels:
     blocksize1:
-        created: false
+        created: true
         definition:
             capabilities: []
             consortium: 'SampleConsortium'
