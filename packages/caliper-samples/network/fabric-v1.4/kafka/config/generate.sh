@@ -13,8 +13,8 @@
 echo $FABRIC_CFG_PATH
 
 # ./bin/cryptogen generate --config=./crypto-config.yaml
-./bin/configtxgen -profile OrdererGenesis -outputBlock blockSize1-genesis.block -channelID syschannel
-./bin/configtxgen -profile ChannelConfig -outputCreateChannelTx blocksize1.tx -channelID blocksize1
+./bin/configtxgen -profile OrdererGenesis -outputBlock blockSize2-genesis.block -channelID syschannel
+./bin/configtxgen -profile ChannelConfig -outputCreateChannelTx blocksize2.tx -channelID blocksize2
 
 # Rename the key files we use to be key.pem instead of a uuid
 # for KEY in $(find crypto-config -type f -name "*_sk"); do
