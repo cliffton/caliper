@@ -56,7 +56,7 @@ clients:
 
 
 channels:
-    mychannel:
+    blocksize1:
         created: false
         definition:
             capabilities: []

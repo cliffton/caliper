@@ -44,7 +44,7 @@ mkdir -p $HOME/orderer/configtx
 export FABRIC_LOGGING_SPEC="grpc=debug:debug"
 export ORDERER_GENERAL_LISTENADDRESS="0.0.0.0"
 export ORDERER_GENERAL_GENESISMETHOD="file"
-export ORDERER_GENERAL_GENESISFILE="$HOME"/orderer/configtx/genesis.block
+export ORDERER_GENERAL_GENESISFILE="$HOME"/orderer/configtx/blockSize1-genesis.block
 export ORDERER_GENERAL_LOCALMSPID="OrdererMSP"
 export ORDERER_GENERAL_LOCALMSPDIR="$HOME"/orderer/msp/orderer/msp
 export ORDERER_KAFKA_VERBOSE="true"
