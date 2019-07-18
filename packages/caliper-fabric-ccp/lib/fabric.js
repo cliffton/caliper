@@ -266,7 +266,7 @@ class Fabric extends BlockchainInterface {
                 continue;
             }
 
-            if (ConfigUtil.get(ConfigUtil.keys.FabricSkipCreateChannelPrefix + channel, false)) {
+            if (ConfigUtil.get(ConfigUtil.keys.FabricSkipCreateChannelPrefix, false)) {
                 logger.info(`Creation of Channel '${channel}' is configured to skip`);
                 continue;
             }

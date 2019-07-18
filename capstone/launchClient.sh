@@ -13,12 +13,12 @@ else
     CONFIG_TYPE=$1
 fi
 
-export CALIPER_FABRICCCP_SKIPCREATECHANNEL_MYCHANNEL=true
+export CALIPER_FABRICCCP_SKIPCREATECHANNEL=true
 
 if [ "$2" == "create" ];
 then
     echo "Creating channel"
-    export CALIPER_FABRICCCP_SKIPCREATECHANNEL_MYCHANNEL=false
+    export CALIPER_FABRICCCP_SKIPCREATECHANNEL=false
 else
 	echo "Skipping channel creation"
 fi
