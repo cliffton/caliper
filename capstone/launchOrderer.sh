@@ -36,10 +36,15 @@ do
 	kill -9 $pid
 done
 
+
+echo "Orderers killed !!"
+
 rm -rf $HOME/orderer
 mkdir -p $HOME/orderer/msp/orderer
 mkdir -p $HOME/orderer/ledger
 mkdir -p $HOME/orderer/configtx
+
+echo "Folders created"
 
 export FABRIC_LOGGING_SPEC="grpc=debug:debug"
 export ORDERER_GENERAL_LISTENADDRESS="0.0.0.0"
