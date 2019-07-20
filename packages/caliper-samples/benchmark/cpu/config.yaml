@@ -17,7 +17,7 @@ test:
         tps: 50
     arguments:
       num: 10000
-    callback: benchmark/simple/query.js
+    callback: benchmark/cpu/prime.js
 monitor:
   type:
   - docker
