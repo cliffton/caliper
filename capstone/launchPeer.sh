@@ -69,7 +69,7 @@ export CORE_PEER_FILESYSTEMPATH=$HOME/peer/ledger/
 cd $HOME/caliper/packages/caliper-samples/network/fabric-v1.4/"$CONFIG_TYPE"
 cp core.yaml $HOME/peer/
 cp -r ./config/crypto-config/peerOrganizations/org"$ORG_ID".example.com/peers/"$CORE_PEER_ID"/* $HOME/peer/
-cp -r ./config/mychannel.tx $HOME/peer/configtx/mychannel.tx
+cp -r ./config/* $HOME/peer/configtx/
 cp -r ./config/crypto-config/peerOrganizations/org"$ORG_ID".example.com/users $HOME/peer/msp/
 
 cd $HOME/go/src/github.com/hyperledger/fabric
