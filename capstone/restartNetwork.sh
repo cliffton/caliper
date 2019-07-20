@@ -1,6 +1,10 @@
 #!/bin/bash
 
 
+## Update code everywhere.
+./updateNodes.sh 166 177 'cd ~/caliper && git pull origin cpu'
+
+
 ## Clean Everything
 ./killAll.sh
 

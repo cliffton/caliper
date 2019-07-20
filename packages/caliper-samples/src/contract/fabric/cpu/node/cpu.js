@@ -83,9 +83,9 @@ let CpuChaincode = class {
      * @return {Promise<SuccessResponse | ErrorResponse>} Returns a promise of a response indicating the result of the invocation.
      */
     async prime(stub, params) {
-        if (params.length !== 1) {
-            return getErrorResponse('prime', ERROR_WRONG_FORMAT);
-        }
+        // if (params.length !== 1) {
+        //     return getErrorResponse('prime', ERROR_WRONG_FORMAT);
+        // }
 
         try {
             let num = parseInt(params[0]);
