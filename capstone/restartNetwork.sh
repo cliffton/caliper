@@ -14,11 +14,13 @@
 
 
 ## Start Orderers 
-./updateNodes.sh 173 174 'cd ~/caliper/capstone/ && ./launchOrderer.sh'
+./updateNodes.sh 173 173 'cd ~/caliper/capstone/ && ./launchOrderer.sh 0 kafka'
+./updateNodes.sh 174 174 'cd ~/caliper/capstone/ && ./launchOrderer.sh 1 kafka'
 
 
 ## Start Peers
-./updateNodes.sh 175 176 'cd ~/caliper/capstone/ && ./launchPeer.sh'
+./updateNodes.sh 175 175 'cd ~/caliper/capstone/ && ./launchPeer.sh 1 0 kafka'
+./updateNodes.sh 176 176 'cd ~/caliper/capstone/ && ./launchPeer.sh 2 0 kafka'
 
 
 
