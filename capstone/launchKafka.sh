@@ -20,11 +20,16 @@ function usage {
 # fi
 
 
-pids=`ps ax | grep -i 'peer' | grep -v grep | awk '{print $1}'`
+pids=`ps ax | grep -i 'kafka' | grep -v grep | awk '{print $1}'`
 for pid in $(eval echo $pids)
 do
-	echo "########### kill -9 $pid #############"
-	kill -9 $pid
+    if [ $pid == $$ ]
+    then
+        echo "Current PID = " $pid
+    else
+       echo "########### kill -9 $pid #############"
+       kill -9 $pid
+    fi
 done
 
 cd $HOME/kafka
