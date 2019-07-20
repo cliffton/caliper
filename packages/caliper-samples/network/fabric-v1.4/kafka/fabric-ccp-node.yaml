@@ -57,7 +57,7 @@ clients:
 
 channels:
     mychannel:
-        created: true
+        created: false
         definition:
             capabilities: []
             consortium: 'SampleConsortium'
@@ -78,10 +78,10 @@ channels:
           language: node
           path: src/contract/fabric/cpu/node
           metadataPath: src/contract/fabric/cpu/node/metadata
-        - id: simple
-          version: v0
-          language: node
-          path: src/contract/fabric/simple/node
+        # - id: simple
+        #   version: v0
+        #   language: node
+        #   path: src/contract/fabric/simple/node
 
 organizations:
     Org1:
