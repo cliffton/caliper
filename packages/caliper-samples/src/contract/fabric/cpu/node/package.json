@@ -1,6 +1,6 @@
 {
   "name": "cpu",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Simple chaincode implemented in node.js to test CPU heavy workload.",
   "engines": {
     "node": ">=8.4.0",
