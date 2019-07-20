@@ -57,7 +57,7 @@ clients:
 
 channels:
     mychannel:
-        created: false
+        created: true
         definition:
             capabilities: []
             consortium: 'SampleConsortium'
