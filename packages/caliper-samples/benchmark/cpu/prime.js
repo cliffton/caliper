@@ -40,13 +40,13 @@ module.exports.run = function() {
     if (bc.bcType === 'fabric-ccp') {
         let args = {
             chaincodeFunction: 'prime',
-            chaincodeArguments: [num],
+            chaincodeArguments: [num.toString()],
         };
 
         return bc.invokeSmartContract(contx, 'cpu', 'v0', args, 10);
     } else {
         // NOTE: the query API is not consistent with the invoke API
-        return bc.queryState(contx, 'cpu', 'v0', num);
+        return bc.queryState(contx, 'cpu', 'v0', acc);
     }
 };
 
