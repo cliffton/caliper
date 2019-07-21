@@ -16,7 +16,7 @@ test:
       opts:
         tps: 50
     arguments:
-      num: 10000
+      num: 2074722246773485207821695222107608587480996474721117292752992589912196684750549658310084416732550077
     callback: benchmark/cpu/prime.js
 monitor:
   type:
