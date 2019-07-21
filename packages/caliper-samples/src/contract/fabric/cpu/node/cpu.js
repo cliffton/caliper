@@ -110,7 +110,7 @@ let CpuChaincode = class {
                 }
             }
 
-            // await stub.putState(params[0], Buffer.from("done"));
+            await stub.putState(params[0], Buffer.from("done"));
 
         } catch (err) {
             return getErrorResponse('prime', ERROR_SYSTEM, err);
