@@ -5,7 +5,7 @@ test:
     performance with cpu heavey chaincode.
   clients:
     type: local
-    number: 2
+    number: 1
   rounds:
   - label: prime
     description: Prime factorization
