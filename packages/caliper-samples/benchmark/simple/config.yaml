@@ -14,7 +14,7 @@ test:
     rateControl:
     - type: fixed-rate
       opts:
-        tps: 10
+        tps: 25
     arguments:
       money: 10000
     callback: benchmark/simple/open.js
