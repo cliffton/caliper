@@ -49,6 +49,8 @@ module.exports.run = function() {
             chaincodeArguments: [num.toString(), count.toString()],
         };
 
+        console.log("sending " + args.toString());
+
         return bc.invokeSmartContract(contx, 'cpu', 'v0', args, 10);
     } else {
         // NOTE: the query API is not consistent with the invoke API
