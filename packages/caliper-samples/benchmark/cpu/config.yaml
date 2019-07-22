@@ -10,7 +10,7 @@ test:
   - label: prime
     description: Prime factorization
     txNumber:
-    - 100
+    - 1000
     rateControl:
     - type: fixed-rate
       opts:
