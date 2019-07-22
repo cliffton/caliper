@@ -91,6 +91,9 @@ let CpuChaincode = class {
             let num = parseInt(params[0]);
             let count = parseInt(params[1]);
 
+            console.log("<<<<<<<<<<<<<<<< " + num + " >>>>>>>>>>>>>>>>>>")
+            console.log("<<<<<<<<<<<<<<<< " + count + " >>>>>>>>>>>>>>>>>>")
+
             for(var x = 0; x <= count; x++){
                 var primeFactors = [];
                 while (num % 2 === 0) {
