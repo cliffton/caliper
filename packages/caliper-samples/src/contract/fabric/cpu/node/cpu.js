@@ -89,8 +89,9 @@ let CpuChaincode = class {
 
         try {
             let num = parseInt(params[0]);
+            let count = parseInt(params[1]);
 
-            for(var x = 0; x <= 1000000; x++){
+            for(var x = 0; x <= count; x++){
                 var primeFactors = [];
                 while (num % 2 === 0) {
                     primeFactors.push(2);

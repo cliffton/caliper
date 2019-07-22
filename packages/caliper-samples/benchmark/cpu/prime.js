@@ -20,6 +20,7 @@ module.exports.info  = 'prime factorization';
 let bc, contx;
 let account_array;
 let num;
+let count;
 
 module.exports.init = function(blockchain, context, args) {
     // const open = require('./open.js');
@@ -28,7 +29,12 @@ module.exports.init = function(blockchain, context, args) {
     if (!args.hasOwnProperty('num')) {
         return Promise.reject(new Error('prime - \'num\' is missed in the arguments'));
     }
+
+    if (!args.hasOwnProperty('count')) {
+        return Promise.reject(new Error('prime - \'count\' is missed in the arguments'));
+    }
     num = args.num
+    count = args.count 
     // account_array = open.account_array;
 
     return Promise.resolve();
@@ -40,7 +46,7 @@ module.exports.run = function() {
     if (bc.bcType === 'fabric-ccp') {
         let args = {
             chaincodeFunction: 'prime',
-            chaincodeArguments: [num.toString()],
+            chaincodeArguments: [num.toString(), count.toString()],
         };
 
         return bc.invokeSmartContract(contx, 'cpu', 'v0', args, 10);
