@@ -5,16 +5,16 @@ test:
     performance with cpu heavey chaincode.
   clients:
     type: local
-    number: 1
+    number: 2
   rounds:
   - label: prime
     description: Prime factorization
     txNumber:
-    - 100
+    - 1000
     rateControl:
     - type: fixed-rate
       opts:
-        tps: 50
+        tps: 10
     arguments:
       num: 2074722246773485207821695222107608587480996474721117292752992589912196684750549658310084416732550077
       count: 10000
