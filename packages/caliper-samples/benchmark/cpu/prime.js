@@ -49,7 +49,7 @@ module.exports.run = function() {
             chaincodeArguments: [num.toString(), count.toString()],
         };
 
-        console.log("sending " + args.toString());
+        // console.log("sending " + args.toString());
 
         return bc.invokeSmartContract(contx, 'cpu', 'v0', args, 10);
     } else {
