@@ -12,6 +12,12 @@ do
     fi
 done
 
+docker stop $(docker ps -aq)
+
+docker rm $(docker ps -aq)
+
+docker rmi $(docker images -q)
+
 docker rm $(docker ps -a -f status=exited -q)
 
 docker rmi $(docker images -a -q)
