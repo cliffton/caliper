@@ -83,4 +83,4 @@ peer node start &> $HOME/peer/peer.log &
 
 pid=`ps ax | grep -i 'peer node start' | grep -v grep | awk '{print $1}'`
 
-/usr/bin/python3 $HOME/caliper/capstone/processMonitor.py 9001 pid &> $HOME/peer/monitor.log &
+/usr/bin/python3 $HOME/caliper/capstone/processMonitor.py 9001 $pid &> $HOME/peer/monitor.log &
