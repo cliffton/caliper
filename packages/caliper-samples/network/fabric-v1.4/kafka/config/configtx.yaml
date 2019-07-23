@@ -45,11 +45,11 @@ Orderer: &OrdererDefaults
     - orderer0.example.com:7050
     - orderer1.example.com:7050
 
-    BatchTimeout: 5000ms
+    BatchTimeout: 50000ms
     BatchSize:
-        MaxMessageCount: 500
-        AbsoluteMaxBytes: 250 KB
-        PreferredMaxBytes: 250 KB
+        MaxMessageCount: 5000
+        AbsoluteMaxBytes: 300 KB
+        PreferredMaxBytes: 300 KB
 
     MaxChannels: 0
     Kafka:
