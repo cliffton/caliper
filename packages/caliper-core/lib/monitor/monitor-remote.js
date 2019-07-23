@@ -4,7 +4,7 @@ const ps = require('ps-node');
 const usage = require('pidusage');
 const MonitorInterface = require('./monitor-interface');
 const Util = require('../utils/caliper-utils.js');
-const logger = Util.getLogger('monitor-process.js');
+const logger = Util.getLogger('monitor-remote.js');
 const https = require('https');
 
 /**
@@ -130,6 +130,8 @@ class MonitorRemote extends MonitorInterface {
      * @param {*} interval resource fetching interval
      */
     constructor(filter, interval) {
+    	logger.info("MonitorRemote Started");
+
         super(filter, interval);
         this.isReading    = false;
         this.intervalObj  = null;

@@ -112,6 +112,9 @@ class Monitor {
         //const config = require(this.configPath);
         const config = Util.parseYaml(this.configPath);
         const m = config.monitor;
+
+        logger.info("Monitors" + m);
+
         if(typeof m === 'undefined') {
             return Promise.reject(new Error('Failed to find monitor in config file'));
         }
@@ -137,6 +140,9 @@ class Monitor {
             monitorTypes.forEach( (type) => {
                 promises.push(new Promise((resolve, reject) => {
                     let promise = null;
+
+                    logger.info("Monitor type" + type);
+
                     if(type === 'docker') {     // monitor for local docker containers
                         promise = this._startDockerMonitor(m.docker, m.interval);
                     }
@@ -514,6 +520,7 @@ class Monitor {
      * @return {Promise} promise object
      */
     _startRemoteMonitor(args, interval) {
+        logger.info("_startRemoteMonitor");
         let RemoteMonitor = require('./monitor-remote.js');
         let monitor = new RemoteMonitor(args, interval);
         return monitor.start().then(()=>{
