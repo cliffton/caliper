@@ -23,11 +23,21 @@ monitor:
   type:
   - docker
   - process
+  - remote
   docker:
     name:
     - all
   process:
   - command: node
     arguments: local-client.js
+    multiOutput: avg
+  remote:
+  - node: http://peer0.org1.example.com:9001
+    multiOutput: avg
+  - node: http://peer0.org2.example.com:9001
+    multiOutput: avg
+  - node: http://ordere0.example.com:9001
+    multiOutput: avg
+  - node: http://ordere1.example.com:9001
     multiOutput: avg
   interval: 1
