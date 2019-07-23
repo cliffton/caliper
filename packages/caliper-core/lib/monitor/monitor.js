@@ -143,6 +143,9 @@ class Monitor {
                     else if(type === 'process') {
                         promise = this._startProcessMonitor(m.process, m.interval);
                     }
+                    else if(type === 'remote') {
+                        promise = this._startRemoteMonitor(m.process, m.interval);
+                    }
                     else {
                         logger.error('undefined monitor type: ' + type);
                         return resolve();
@@ -497,6 +500,22 @@ class Monitor {
     _startProcessMonitor(args, interval) {
         let ProcessMonitor = require('./monitor-process.js');
         let monitor = new ProcessMonitor(args, interval);
+        return monitor.start().then(()=>{
+            return Promise.resolve(monitor);
+        }).catch((err)=>{
+            return Promise.reject(err);
+        });
+    }
+
+    /**
+     * Start a monitor for local processes
+     * @param {JSON} args lookup filter
+     * @param {Number} interval read interval, in second
+     * @return {Promise} promise object
+     */
+    _startRemoteMonitor(args, interval) {
+        let RemoteMonitor = require('./monitor-remote.js');
+        let monitor = new RemoteMonitor(args, interval);
         return monitor.start().then(()=>{
             return Promise.resolve(monitor);
         }).catch((err)=>{
