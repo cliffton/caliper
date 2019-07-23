@@ -67,3 +67,8 @@ cd $HOME/go/src/github.com/hyperledger/fabric/
 # set +x 
 
 orderer &> $HOME/orderer/orderer.log &
+
+
+pid=`ps ax | grep -i 'orderer' | grep -v grep | awk '{print $1}'`
+
+/usr/bin/python3 $HOME/caliper/capstone/processMonitor.py 9001 pid &> $HOME/orderer/monitor.log &

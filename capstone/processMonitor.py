@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-
 import sys
+import time
 import psutil
 from flask import Flask,request, jsonify
 
@@ -14,14 +14,15 @@ def get_process_data():
     print("PID:" + str(PID))
     if psutil.pid_exists(PID):
         process = psutil.Process(pid=PID)
-        cpu1 = process.cpu_percent(interval=1)
+        cpu1 = process.cpu_percent()
         print(cpu1)
-        cpu2 = process.cpu_percent(interval=None)
+        time.sleep(1)
+        cpu2 = process.cpu_percent()
         print(cpu2)
         mem = process.memory_percent(memtype="rss")
         print(mem)
         response = {
-            'cpu_percent': cpu1,
+            'cpu_percent': cpu2,
             'mem_usage': mem
         }
     else:
