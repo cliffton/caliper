@@ -73,15 +73,15 @@ channels:
                 eventSource: true
 
         chaincodes:
-        # - id: cpu
-        #   version: v0
-        #   language: node
-        #   path: src/contract/fabric/cpu/node
-        #   metadataPath: src/contract/fabric/cpu/node/metadata
-        - id: simple
+        - id: cpu
           version: v0
           language: node
-          path: src/contract/fabric/simple/node
+          path: src/contract/fabric/cpu/node
+          metadataPath: src/contract/fabric/cpu/node/metadata
+        # - id: simple
+        #   version: v0
+        #   language: node
+        #   path: src/contract/fabric/simple/node
 
 organizations:
     Org1:
