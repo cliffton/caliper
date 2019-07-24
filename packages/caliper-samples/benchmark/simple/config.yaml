@@ -42,6 +42,7 @@ monitor:
   type:
   - docker
   - process
+  - remote
   docker:
     name:
     - all
@@ -49,4 +50,13 @@ monitor:
   - command: node
     arguments: local-client.js
     multiOutput: avg
-  interval: 1
+  remote:
+  - node: http://peer0.org1.example.com:9001
+    multiOutput: avg
+  - node: http://peer0.org2.example.com:9001
+    multiOutput: avg
+  - node: http://orderer0.example.com:9001
+    multiOutput: avg
+  - node: http://orderer1.example.com:9001
+    multiOutput: avg
+  interval: 0.5

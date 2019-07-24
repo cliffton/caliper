@@ -40,4 +40,4 @@ monitor:
     multiOutput: avg
   - node: http://orderer1.example.com:9001
     multiOutput: avg
-  interval: 1
+  interval: 0.5
