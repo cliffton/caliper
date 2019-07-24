@@ -153,6 +153,9 @@ class MonitorRemote extends MonitorInterface {
         this.stats  = {'time': []};
         this.filter = [];
         for(let i = 0 ; i < filter.length ; i++) {
+
+        	logger.info("filter=>" + filter[i]);
+
             if(filter[i].hasOwnProperty('node')) {
                 let id = getId(filter[i]);
                 this.stats[id] = newStat();
