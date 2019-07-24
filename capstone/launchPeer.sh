@@ -80,9 +80,10 @@ cp -r ./config/crypto-config/peerOrganizations/org"$ORG_ID".example.com/users $H
 cd $HOME/go/src/github.com/hyperledger/fabric
 peer node start &> $HOME/peer/peer.log &
 
+pid=$!
 
-sleep 5
+# sleep 5
 
-pid=`ps ax | grep -i 'peer node start' | grep -v grep | awk '{print $1}'`
+# pid=`ps ax | grep -i 'peer node start' | grep -v grep | awk '{print $1}'`
 
 python3 $HOME/caliper/capstone/processMonitor.py 9001 $pid &> $HOME/peer/monitor.log &
