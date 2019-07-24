@@ -36,8 +36,8 @@ monitor:
     multiOutput: avg
   - node: http://peer0.org2.example.com:9001
     multiOutput: avg
-  - node: http://ordere0.example.com:9001
+  - node: http://orderer0.example.com:9001
     multiOutput: avg
-  - node: http://ordere1.example.com:9001
+  - node: http://orderer1.example.com:9001
     multiOutput: avg
   interval: 1
