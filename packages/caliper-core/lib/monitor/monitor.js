@@ -150,7 +150,7 @@ class Monitor {
                         promise = this._startProcessMonitor(m.process, m.interval);
                     }
                     else if(type === 'remote') {
-                        promise = this._startRemoteMonitor(m.process, m.interval);
+                        promise = this._startRemoteMonitor(m.remote, m.interval);
                     }
                     else {
                         logger.error('undefined monitor type: ' + type);
