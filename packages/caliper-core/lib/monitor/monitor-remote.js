@@ -85,6 +85,9 @@ function getProcUsage(node) {
     	  	let res = JSON.parse(data)
     	  	logger.info("Received data = " + data);
     	  	logger.info(JSON.stringify(res));
+    	  	logger.info("No parse " + data.cpu_percent);
+    	  	logger.info("parse " + res.cpu_percent);
+
     	  	let stat = { 'cpu': res.cpu_percent, 'memory': res.mem_usage }
 
     	  	logger.info("Received Stat: " + stat);
