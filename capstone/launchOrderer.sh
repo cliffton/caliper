@@ -68,7 +68,7 @@ cd $HOME/go/src/github.com/hyperledger/fabric/
 
 orderer &> $HOME/orderer/orderer.log &
 
-sleep(5)
+sleep 5
 
 pid=`ps ax | grep -i 'orderer' | grep -v grep | awk '{print $1}'`
 
