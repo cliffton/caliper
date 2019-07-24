@@ -70,6 +70,8 @@ function findProcs(item) {
 function getProcUsage(node) {
     return new Promise((resolve, reject) => {
         
+    	logger.info("getProcUsage "  + node)
+
     	http.get(node, (resp) => {
     	  let data = '';
     	  // A chunk of data has been recieved.
@@ -88,7 +90,7 @@ function getProcUsage(node) {
     	  });
 
     	}).on("error", (err) => {
-    	  console.log("Error: " + err.message);
+    	  logger.error("Error: " + err.message);
     	});
 
 
@@ -194,13 +196,13 @@ class MonitorRemote extends MonitorInterface {
             let promises = [];
             self.filter.forEach((item) => {
 
-            	logger.info("Each filter" + item.node);
+            	logger.info("Each filter " + item.node);
 
                 promises.push(new Promise((resolve, reject) => {
                     // processes may be up/down during the monitoring, so should look for processes every time
                     getUsage(item, item.multiOutput).then((stat) => {
 
-                    	logger.info("get usage" + stat);
+                    	logger.info("get usage " + stat);
 
                         self.stats[getId(item)].mem_usage.push(stat.memory);
                         self.stats[getId(item)].cpu_percent.push(stat.cpu);
