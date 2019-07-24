@@ -24,7 +24,7 @@ function newStat() {
  * @return {String} identity
  */
 function getId(proc) {
-    let id = proc.command;
+    let id = proc.node;
     // if(proc.hasOwnProperty('arguments')) {
     //     id += ' ' + proc.arguments;
     // }
@@ -106,7 +106,7 @@ function getUsage(node, type) {
     return new Promise((resolve, reject) => {
         let res = {memory: 0, cpu: 0};
         
-        let promises = [getProcUsage(node)]
+        let promises = [getProcUsage(node.node)]
 
         Promise.all(promises).then((stats) => {
             for(let i = 0 ; i< stats.length ; i++) {
@@ -154,7 +154,7 @@ class MonitorRemote extends MonitorInterface {
         this.filter = [];
         for(let i = 0 ; i < filter.length ; i++) {
 
-        	logger.info("filter=>" + filter[i]);
+        	logger.info("filter=>" + filter[i].node);
 
             if(filter[i].hasOwnProperty('node')) {
                 let id = getId(filter[i]);
@@ -163,8 +163,8 @@ class MonitorRemote extends MonitorInterface {
             }
         }
 
-        logger.info("Constructor done!" + this.filter)
-        logger.info("Constructor done!" + this.stats)
+        logger.info("Constructor done! " + JSON.stringify(this.filter));
+        logger.info("Constructor done! " + JSON.stringify(this.stats));
 
 
     }
@@ -193,7 +193,7 @@ class MonitorRemote extends MonitorInterface {
             let promises = [];
             self.filter.forEach((item) => {
 
-            	logger.info("Each filter" + item);
+            	logger.info("Each filter" + item.node);
 
                 promises.push(new Promise((resolve, reject) => {
                     // processes may be up/down during the monitoring, so should look for processes every time
