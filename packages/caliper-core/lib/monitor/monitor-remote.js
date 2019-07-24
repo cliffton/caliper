@@ -72,7 +72,7 @@ function getProcUsage(node) {
         
     	logger.info("getProcUsage "  + node)
 
-    	http.get(node, (resp) => {
+    	http.get(node + "/stats", (resp) => {
     	  let data = '';
     	  // A chunk of data has been recieved.
     	  resp.on('data', (chunk) => {
