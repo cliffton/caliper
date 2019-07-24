@@ -5,7 +5,7 @@ const usage = require('pidusage');
 const MonitorInterface = require('./monitor-interface');
 const Util = require('../utils/caliper-utils.js');
 const logger = Util.getLogger('monitor-remote.js');
-const https = require('https');
+const http = require('http');
 
 /**
  * Initialise a state object
@@ -70,7 +70,7 @@ function findProcs(item) {
 function getProcUsage(node) {
     return new Promise((resolve, reject) => {
         
-    	https.get(node, (resp) => {
+    	http.get(node, (resp) => {
     	  let data = '';
     	  // A chunk of data has been recieved.
     	  resp.on('data', (chunk) => {
