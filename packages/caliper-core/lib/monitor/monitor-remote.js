@@ -79,8 +79,12 @@ function getProcUsage(node) {
 
     	  // The whole response has been received. Print out the result.
     	  resp.on('end', () => {
-    	  	let res = [JSON.parse(data)]
-    	    resolve(res);
+
+    	  	let res = JSON.parse(data)
+    	  	let stat = { 'cpu': res.cpu_percent, 'memory': res.mem_usage }
+
+    	  	logger.info("Received Stat: " + stat);
+    	    resolve([stat]);
     	  });
 
     	}).on("error", (err) => {
@@ -156,6 +160,9 @@ class MonitorRemote extends MonitorInterface {
             }
         }
 
+        logger.info("Constructor done!" + this.filter)
+        logger.info("Constructor done!" + this.stats)
+
 
     }
 
@@ -164,11 +171,17 @@ class MonitorRemote extends MonitorInterface {
      * @return {Promise} promise object
      */
     start() {
+
+
+    	logger.info("Start remote monitor monitoring!");
+
         let self = this;
         /**
          * Read statistics of watched items
          */
         function readStats() {
+        	logger.info("readStats");
+
             if(self.isReading) {
                 return;
             }
@@ -176,9 +189,15 @@ class MonitorRemote extends MonitorInterface {
 
             let promises = [];
             self.filter.forEach((item) => {
+
+            	logger.info("Each filter" + item);
+
                 promises.push(new Promise((resolve, reject) => {
                     // processes may be up/down during the monitoring, so should look for processes every time
                     getUsage(item, item.multiOutput).then((stat) => {
+
+                    	logger.info("get usage" + stat);
+
                         self.stats[getId(item)].mem_usage.push(stat.memory);
                         self.stats[getId(item)].cpu_percent.push(stat.cpu);
                         resolve();
@@ -195,6 +214,7 @@ class MonitorRemote extends MonitorInterface {
                 logger.error('Exception occurred when looking the process up: ' + err);
             });
         }
+        logger.info("Start remote monitor monitoring! read stats")
         readStats();
         this.intervalObj = setInterval(readStats, this.interval);
         return Promise.resolve();
