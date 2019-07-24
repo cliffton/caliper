@@ -202,10 +202,11 @@ class MonitorRemote extends MonitorInterface {
                     // processes may be up/down during the monitoring, so should look for processes every time
                     getUsage(item, item.multiOutput).then((stat) => {
 
-                    	logger.info("get usage " + stat);
+                    	logger.info("get usage " + JSON.stringify(stat));
 
                         self.stats[getId(item)].mem_usage.push(stat.memory);
                         self.stats[getId(item)].cpu_percent.push(stat.cpu);
+                        logger.info("Current Stats" + JSON.stringify(self.stats));
                         resolve();
                     }).catch((err) => {
                         resolve();
@@ -287,7 +288,7 @@ class MonitorRemote extends MonitorInterface {
             info.push({
                 'key'  : name,
                 'info' : {
-                    'TYPE' : 'Process',
+                    'TYPE' : 'Remote',
                     'NAME' : name
                 }
             });
@@ -303,7 +304,8 @@ class MonitorRemote extends MonitorInterface {
      */
     getMemHistory(key) {
         //  just to keep the same length as getCpuHistory
-        return this.stats[key].mem_usage.slice(1);
+        // return this.stats[key].mem_usage.slice(1);
+        return this.stats[key].mem_usage;
     }
 
     /**
@@ -314,7 +316,7 @@ class MonitorRemote extends MonitorInterface {
     getCpuHistory(key) {
         // the first element is an average from the starting time of the process
         // it does not correctly reflect the current CPU usage, so just ignore it
-        return this.stats[key].cpu_percent.slice(1);
+        return this.stats[key].cpu_percent;
     }
 
     /**
