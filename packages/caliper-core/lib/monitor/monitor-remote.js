@@ -134,7 +134,8 @@ class MonitorRemote extends MonitorInterface {
      * @param {*} interval resource fetching interval
      */
     constructor(filter, interval) {
-    	logger.info("MonitorRemote Started");
+    	logger.info("MonitorRemote Started" + filter);
+    	logger.info("MonitorRemote Started" + JSON.stringify(filter));
 
         super(filter, interval);
         this.isReading    = false;
