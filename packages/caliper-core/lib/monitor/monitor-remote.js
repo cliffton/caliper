@@ -91,7 +91,7 @@ function getProcUsage(node) {
     	  	let stat = { 'cpu': res.cpu_percent, 'memory': res.mem_usage }
 
     	  	logger.info("Received Stat: " + stat);
-    	    resolve([stat]);
+    	    resolve(stat);
     	  });
 
     	}).on("error", (err) => {
