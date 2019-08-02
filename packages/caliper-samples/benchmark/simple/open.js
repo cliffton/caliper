@@ -77,7 +77,9 @@ function generateWorkload() {
         if (bc.bcType === 'fabric-ccp') {
             workload.push({
                 chaincodeFunction: 'open',
-                chaincodeArguments: [acc_id, initMoney.toString()],
+                chaincodeArguments: [],
+                // chaincodeFunction: 'open',
+                // chaincodeArguments: [acc_id, initMoney.toString()],
             });
         } else {
             workload.push({
@@ -92,7 +94,7 @@ function generateWorkload() {
 
 module.exports.run = function() {
     let args = generateWorkload();
-    return bc.invokeSmartContract(contx, 'simple', 'v0', [], 100);
+    return bc.invokeSmartContract(contx, 'simple', 'v0', args, 100);
 };
 
 module.exports.end = function() {
