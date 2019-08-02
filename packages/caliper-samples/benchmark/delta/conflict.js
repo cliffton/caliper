@@ -14,47 +14,34 @@
 
 'use strict';
 
-module.exports.info  = 'prime factorization';
+module.exports.info  = 'conflict';
 
 
 let bc, contx;
-let account_array;
-let num;
-let count;
 
 module.exports.init = function(blockchain, context, args) {
     // const open = require('./open.js');
     bc       = blockchain;
-    contx    = context;
-    if (!args.hasOwnProperty('num')) {
-        return Promise.reject(new Error('prime - \'num\' is missed in the arguments'));
-    }
-
-    if (!args.hasOwnProperty('count')) {
-        return Promise.reject(new Error('prime - \'count\' is missed in the arguments'));
-    }
-    num = args.num
-    count = args.count 
+    contx    = context; 
     // account_array = open.account_array;
 
     return Promise.resolve();
 };
 
 module.exports.run = function() {
-    // const acc  = account_array[Math.floor(Math.random()*(account_array.length))];
 
     if (bc.bcType === 'fabric-ccp') {
         let args = {
-            chaincodeFunction: 'prime',
-            chaincodeArguments: [num.toString(), count.toString()],
+            chaincodeFunction: 'conflict',
+            chaincodeArguments: [],
         };
 
         // console.log("sending " + args.toString());
 
-        return bc.invokeSmartContract(contx, 'cpu', 'v0', args, 100);
+        return bc.invokeSmartContract(contx, 'delta', 'v0', args, 10);
     } else {
         // NOTE: the query API is not consistent with the invoke API
-        return bc.queryState(contx, 'cpu', 'v0', acc);
+        return bc.queryState(contx, 'delta', 'v0', acc);
     }
 };
 

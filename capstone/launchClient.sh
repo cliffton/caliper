@@ -50,4 +50,4 @@ mkdir -p $HOME/reports
 CALIPER_ROOT=$HOME/caliper/packages/caliper-samples
 
 
-caliper benchmark run -c "$CALIPER_ROOT"/benchmark/cpu/config.yaml -n "$CALIPER_ROOT"/network/fabric-v1.4/"$CONFIG_TYPE"/fabric-ccp-node.yaml -w "$CALIPER_ROOT"/
+caliper benchmark run -c "$CALIPER_ROOT"/benchmark/delta/config.yaml -n "$CALIPER_ROOT"/network/fabric-v1.4/"$CONFIG_TYPE"/fabric-ccp-node.yaml -w "$CALIPER_ROOT"/
