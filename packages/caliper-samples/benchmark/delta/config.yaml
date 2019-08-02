@@ -14,7 +14,7 @@ test:
     rateControl:
     - type: fixed-rate
       opts:
-        tps: 10
+        tps: 20
     callback: benchmark/delta/conflict.js
   - label: delta
     description: Delta fix
@@ -23,7 +23,7 @@ test:
     rateControl:
     - type: fixed-rate
       opts:
-        tps: 10
+        tps: 20
     callback: benchmark/delta/delta.js
 monitor:
   type:
