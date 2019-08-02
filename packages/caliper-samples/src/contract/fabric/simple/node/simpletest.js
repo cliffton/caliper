@@ -86,28 +86,28 @@ let SimpleChaincode = class {
      * @return {Promise<SuccessResponse | ErrorResponse>} Returns a promise of a response indicating the result of the invocation.
      */
     async open(stub, params) {
-        if (params.length !== 2) {
-            return getErrorResponse('open', ERROR_WRONG_FORMAT);
-        }
+        // if (params.length !== 2) {
+        //     return getErrorResponse('open', ERROR_WRONG_FORMAT);
+        // }
 
-        let account = params[0];
-        let money = await stub.getState(account);
+        // let account = params[0];
+        // let money = await stub.getState(account);
 
-        if (money.toString()) {
-            return getErrorResponse('open', ERROR_ACCOUNT_EXISTING);
-        }
+        // if (money.toString()) {
+        //     return getErrorResponse('open', ERROR_ACCOUNT_EXISTING);
+        // }
 
-        let initMoney = parseInt(params[1]);
-        if (isNaN(initMoney)) {
-            return getErrorResponse('open', ERROR_WRONG_FORMAT);
-        }
+        // let initMoney = parseInt(params[1]);
+        // if (isNaN(initMoney)) {
+        //     return getErrorResponse('open', ERROR_WRONG_FORMAT);
+        // }
 
-        try {
-            // expand enumerable Buffer to byte array with the ... operator
-            await stub.putState(account, Buffer.from(params[1]));
-        } catch (err) {
-            return getErrorResponse('open', ERROR_SYSTEM, err);
-        }
+        // try {
+        //     // expand enumerable Buffer to byte array with the ... operator
+        //     await stub.putState(account, Buffer.from(params[1]));
+        // } catch (err) {
+        //     return getErrorResponse('open', ERROR_SYSTEM, err);
+        // }
 
         return shim.success();
     }
