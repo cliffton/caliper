@@ -17,7 +17,7 @@ test:
         tps: 40
     arguments:
       num: 2074722246773485207821695222107608587480996474721117292752992589912196684750549658310084416732550077
-      count: 400000
+      count: 500000
     callback: benchmark/cpu/prime.js
 monitor:
   type:
