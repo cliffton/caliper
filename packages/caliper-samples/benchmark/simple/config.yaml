@@ -42,7 +42,7 @@ monitor:
   type:
   - docker
   - process
-  - remote
+  # - remote
   docker:
     name:
     - all
