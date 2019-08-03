@@ -53,7 +53,7 @@ module.exports.run = function () {
         };
     }
 
-    return bc.invokeSmartContract(contx, 'simple', 'v0', args, 1000);
+    return bc.invokeSmartContract(contx, 'simple', 'v0', args, 100);
 
 };
 
