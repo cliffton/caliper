@@ -48,8 +48,8 @@ Orderer: &OrdererDefaults
     BatchTimeout: 5000ms
     BatchSize:
         MaxMessageCount: 500
-        AbsoluteMaxBytes: 30 KB
-        PreferredMaxBytes: 30 KB
+        AbsoluteMaxBytes: 40 KB
+        PreferredMaxBytes: 40 KB
 
     MaxChannels: 0
     Kafka:
