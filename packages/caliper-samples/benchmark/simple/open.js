@@ -76,10 +76,10 @@ function generateWorkload() {
 
         if (bc.bcType === 'fabric-ccp') {
             workload.push({
-                chaincodeFunction: 'open',
-                chaincodeArguments: [],
                 // chaincodeFunction: 'open',
-                // chaincodeArguments: [acc_id, initMoney.toString()],
+                // chaincodeArguments: [],
+                chaincodeFunction: 'open',
+                chaincodeArguments: [acc_id, initMoney.toString()],
             });
         } else {
             workload.push({
