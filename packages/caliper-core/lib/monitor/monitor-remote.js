@@ -70,7 +70,7 @@ function findProcs(item) {
 function getProcUsage(node) {
     return new Promise((resolve, reject) => {
         
-    	logger.info("getProcUsage "  + node)
+    	// logger.info("getProcUsage "  + node)
 
     	http.get(node + "/stats", (resp) => {
     	  let data = '';
@@ -83,14 +83,14 @@ function getProcUsage(node) {
     	  resp.on('end', () => {
 
     	  	let res = JSON.parse(data)
-    	  	logger.info("Received data = " + data);
-    	  	logger.info(JSON.stringify(res));
-    	  	logger.info("No parse " + data.cpu_percent);
-    	  	logger.info("parse " + res.cpu_percent);
+    	  	// logger.info("Received data = " + data);
+    	  	// logger.info(JSON.stringify(res));
+    	  	// logger.info("No parse " + data.cpu_percent);
+    	  	// logger.info("parse " + res.cpu_percent);
 
     	  	let stat = { 'cpu': res.cpu_percent, 'memory': res.mem_usage }
 
-    	  	logger.info("Received Stat: " + stat);
+    	  	// logger.info("Received Stat: " + stat);
     	    resolve(stat);
     	  });
 
@@ -141,8 +141,8 @@ class MonitorRemote extends MonitorInterface {
      * @param {*} interval resource fetching interval
      */
     constructor(filter, interval) {
-    	logger.info("MonitorRemote Started" + filter);
-    	logger.info("MonitorRemote Started" + JSON.stringify(filter));
+    	// logger.info("MonitorRemote Started" + filter);
+    	// logger.info("MonitorRemote Started" + JSON.stringify(filter));
 
         super(filter, interval);
         this.isReading    = false;
@@ -162,7 +162,7 @@ class MonitorRemote extends MonitorInterface {
         this.filter = [];
         for(let i = 0 ; i < filter.length ; i++) {
 
-        	logger.info("filter=>" + filter[i].node);
+        	// logger.info("filter=>" + filter[i].node);
 
             if(filter[i].hasOwnProperty('node')) {
                 let id = getId(filter[i]);
@@ -171,8 +171,8 @@ class MonitorRemote extends MonitorInterface {
             }
         }
 
-        logger.info("Constructor done! " + JSON.stringify(this.filter));
-        logger.info("Constructor done! " + JSON.stringify(this.stats));
+        // logger.info("Constructor done! " + JSON.stringify(this.filter));
+        // logger.info("Constructor done! " + JSON.stringify(this.stats));
 
 
     }
@@ -184,14 +184,14 @@ class MonitorRemote extends MonitorInterface {
     start() {
 
 
-    	logger.info("Start remote monitor monitoring!");
+    	// logger.info("Start remote monitor monitoring!");
 
         let self = this;
         /**
          * Read statistics of watched items
          */
         function readStats() {
-        	logger.info("readStats");
+        	// logger.info("readStats");
 
             if(self.isReading) {
                 return;
@@ -201,17 +201,17 @@ class MonitorRemote extends MonitorInterface {
             let promises = [];
             self.filter.forEach((item) => {
 
-            	logger.info("Each filter " + item.node);
+            	// logger.info("Each filter " + item.node);
 
                 promises.push(new Promise((resolve, reject) => {
                     // processes may be up/down during the monitoring, so should look for processes every time
                     getUsage(item, item.multiOutput).then((stat) => {
 
-                    	logger.info("get usage " + JSON.stringify(stat));
+                    	// logger.info("get usage " + JSON.stringify(stat));
 
                         self.stats[getId(item)].mem_usage.push(stat.memory);
                         self.stats[getId(item)].cpu_percent.push(stat.cpu);
-                        logger.info("Current Stats" + JSON.stringify(self.stats));
+                        // logger.info("Current Stats" + JSON.stringify(self.stats));
                         resolve();
                     }).catch((err) => {
                         resolve();
@@ -226,7 +226,7 @@ class MonitorRemote extends MonitorInterface {
                 logger.error('Exception occurred when looking the process up: ' + err);
             });
         }
-        logger.info("Start remote monitor monitoring! read stats")
+        // logger.info("Start remote monitor monitoring! read stats")
         readStats();
         this.intervalObj = setInterval(readStats, this.interval);
         return Promise.resolve();
