@@ -115,7 +115,7 @@ let SimpleChaincode = class {
     async delta(stub, params) { 
 
         try {
-            let x = 1;
+            //let x = 1;
             await stub.putState(params[0], Buffer.from(x.toString()));
         } catch (err) {
             return getErrorResponse('transfer', ERROR_SYSTEM, err);
