@@ -54,6 +54,7 @@ export npm_config_registry=http://localhost:4873
 
 # Start npm server and publish latest packages to it
 npm run setup_verdaccio
+# npm run stop_verdaccio
 
 # Run benchmark adaptor
 if [ "${BENCHMARK}" == "composer" ]; then

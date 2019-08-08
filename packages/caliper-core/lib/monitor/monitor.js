@@ -112,6 +112,9 @@ class Monitor {
         //const config = require(this.configPath);
         const config = Util.parseYaml(this.configPath);
         const m = config.monitor;
+
+        logger.info("Monitors" + m);
+
         if(typeof m === 'undefined') {
             return Promise.reject(new Error('Failed to find monitor in config file'));
         }
@@ -137,11 +140,17 @@ class Monitor {
             monitorTypes.forEach( (type) => {
                 promises.push(new Promise((resolve, reject) => {
                     let promise = null;
+
+                    logger.info("Monitor type" + type);
+
                     if(type === 'docker') {     // monitor for local docker containers
                         promise = this._startDockerMonitor(m.docker, m.interval);
                     }
                     else if(type === 'process') {
                         promise = this._startProcessMonitor(m.process, m.interval);
+                    }
+                    else if(type === 'remote') {
+                        promise = this._startRemoteMonitor(m.remote, m.interval);
                     }
                     else {
                         logger.error('undefined monitor type: ' + type);
@@ -497,6 +506,23 @@ class Monitor {
     _startProcessMonitor(args, interval) {
         let ProcessMonitor = require('./monitor-process.js');
         let monitor = new ProcessMonitor(args, interval);
+        return monitor.start().then(()=>{
+            return Promise.resolve(monitor);
+        }).catch((err)=>{
+            return Promise.reject(err);
+        });
+    }
+
+    /**
+     * Start a monitor for local processes
+     * @param {JSON} args lookup filter
+     * @param {Number} interval read interval, in second
+     * @return {Promise} promise object
+     */
+    _startRemoteMonitor(args, interval) {
+        logger.info("_startRemoteMonitor");
+        let RemoteMonitor = require('./monitor-remote.js');
+        let monitor = new RemoteMonitor(args, interval);
         return monitor.start().then(()=>{
             return Promise.resolve(monitor);
         }).catch((err)=>{

@@ -1,0 +1,21 @@
+127.0.0.1       localhost
+::1     localhost ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+10.10.10.170       ca.org1.example.com
+10.10.10.175       ca.org2.example.com
+10.10.10.171       orderer.example.com
+10.10.10.172       peer0.org1.example.com
+10.10.10.173       peer0.org2.example.com
+10.10.10.174       client.example.com
+10.10.10.176       zookeeper1.example.com
+10.10.10.176       kafka1
+10.10.10.177       zookeeper2.example.com
+10.10.10.177       kafka2
+10.10.10.175       zookeeper3.example.com
+10.10.10.175       kafka3
+10.10.10.174       kafka0
+10.10.10.171       orderer0.example.com
+10.10.10.170       orderer1.example.com

@@ -1,7 +1,7 @@
 ---
 test:
   name: simple
-  description: This is an example benchmark for caliper, to test the backend DLT's
+  description: This is an example benchmark for caliper, to test the backend DLTs
     performance with simple account opening & querying transactions
   clients:
     type: local
@@ -10,31 +10,31 @@ test:
   - label: open
     description: Test description for the opening of an account through the deployed chaincode
     txNumber:
-    - 100
+    - 1000
     rateControl:
     - type: fixed-rate
       opts:
-        tps: 50
+        tps: 70
     arguments:
       money: 10000
     callback: benchmark/simple/open.js
-  - label: query
-    description: Test description for the query performance of the deployed chaincode
-    txNumber:
-    - 100
-    rateControl:
-    - type: fixed-rate
-      opts:
-        tps: 100
-    callback: benchmark/simple/query.js
+  # - label: query
+  #   description: Test description for the query performance of the deployed chaincode
+  #   txNumber:
+  #   - 100
+  #   rateControl:
+  #   - type: fixed-rate
+  #     opts:
+  #       tps: 100
+  #   callback: benchmark/simple/query.js
   - label: transfer
     description: Test description for transfering money between accounts
     txNumber:
-        - 100
+        - 1000
     rateControl:
         - type: fixed-rate
           opts:
-              tps: 50
+            tps: 70
     arguments:
         money: 100
     callback: benchmark/simple/transfer.js
@@ -42,6 +42,7 @@ monitor:
   type:
   - docker
   - process
+  - remote
   docker:
     name:
     - all
@@ -49,4 +50,13 @@ monitor:
   - command: node
     arguments: local-client.js
     multiOutput: avg
-  interval: 1
+  remote:
+  - node: http://peer0.org1.example.com:9001
+    multiOutput: avg
+  - node: http://peer0.org2.example.com:9001
+    multiOutput: avg
+  - node: http://orderer0.example.com:9001
+    multiOutput: avg
+  - node: http://orderer1.example.com:9001
+    multiOutput: avg
+  interval: 0.5
