@@ -1,3 +1,6 @@
+# **NOTE: This repository is modified for personal use. It does not use docker containers instead implements a worker process on each node to track node performance**   
+
+
 ## Hyperledger Caliper
 
 Welcome to the Hyperledger Caliper project. Caliper is a blockchain performance benchmark framework, which allows users to test different blockchain solutions with predefined use cases, and get a set of performance test results.
