@@ -2,7 +2,7 @@
 
 pids=`ps ax | grep -i 'kafka' | grep -v grep | awk '{print $1}'`
 echo "Printing PIDS"
-echo pids
+echo $pids
 for pid in $(eval echo $pids)
 do
     if [ $pid == $$ ]
