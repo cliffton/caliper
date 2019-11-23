@@ -18,8 +18,8 @@
 
 
 ## Start CAs
-./updateNodes.sh 173 173 'cd ~/caliper/capstone/ && ./launchCA.sh 0 kafka'
-./updateNodes.sh 174 174 'cd ~/caliper/capstone/ && ./launchCA.sh 1 kafka'
+./updateNodes.sh 173 173 'cd ~/caliper/capstone/ && ./launchCA.sh 1 kafka'
+./updateNodes.sh 174 174 'cd ~/caliper/capstone/ && ./launchCA.sh 2 kafka'
 
 ## Start Orderers 
 ./updateNodes.sh 173 173 'cd ~/caliper/capstone/ && ./launchOrderer.sh 0 kafka'
